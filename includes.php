@@ -2,9 +2,14 @@
 
 include "connection.php";
 
-$sql =  "SELECT QUOTES FROM authorQuotes ORDER BY RAND() LIMIT 1";
+$sql =  "select authorName, quotes from authorQuotes ORDER BY RAND() limit 1;";
 $result = $con->query($sql);
 
 $row = $result->fetch_array(MYSQLI_NUM);
-printf("%s \n", $row[0]);
+$authorName =  $row[0];
+$authorQuote = $row[1];
+
+
+
+
 $result->free_result();

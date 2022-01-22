@@ -2,6 +2,7 @@ body {
   background-color: rgb(20, 20, 20);
   text-align: center;
   height: 110vh;
+  zoom: 80%;
 }
 img {
   max-width: 100%;
