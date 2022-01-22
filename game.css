@@ -1,0 +1,15 @@
+/* GLOBAL STYLES */
+body {
+  background: #333;
+  padding-top: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter {
+  font-family: monospace;
+  color: rgb(255, 255, 255);
+}

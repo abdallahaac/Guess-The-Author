@@ -1,0 +1,42 @@
+body {
+  background-color: rgb(20, 20, 20);
+  text-align: center;
+  height: 110vh;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+h2,
+h3 {
+  color: rgba(255, 255, 255, 0.912);
+  font-family: "Helvetica Neue";
+  text-align: center;
+  display: inline-block;
+}
+h2 {
+  font-size: 2.5em;
+  display: inline-block;
+}
+h3 {
+  font-size: 1.5em;
+}
+button {
+  padding: 30px 70px;
+  border-radius: 9px;
+  background-color: rgb(48, 178, 96);
+  border: none;
+  color: #fff;
+  font-size: 1.5em;
+  font-family: "Helvetica Neue";
+}
+button:hover {
+  transition: 0.3s;
+  background-color: rgb(39, 143, 77);
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
