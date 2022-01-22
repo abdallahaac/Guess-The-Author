@@ -10,9 +10,9 @@ if (isset($_POST['submit-button'])) {
 }
 
 if ($userGuess == $author) {
-    echo "right";
+    echo "<p class='iscorrect'>right</p>";
 } else {
-    echo "wrong";
+    echo "<p class='iscorrect'>wrong</p> ";
 }
 
 ?>
@@ -33,7 +33,7 @@ if ($userGuess == $author) {
         <?php echo "<h4> $authorQuote </h4>" ?>
         <form action="#" method="POST">
             <input name="userGuess" type="text" maxlength="50">
-            <input type="submit" name="submit-button">
+            <input id="submit" type="submit" name="submit-button">
             <input type="hidden" name="author" value="<?php echo $authorName ?>">
         </form>
         <!-- <p name="author"></p> -->
@@ -52,6 +52,18 @@ if ($userGuess == $author) {
     margin-left: -150px;
     margin-bottom: 50px
 } */
+.iscorrect {
+    font-family: monospace;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 150px;
+
+}
+
+#submit {
+    color: orange;
+}
 </style>
 
 </html>
