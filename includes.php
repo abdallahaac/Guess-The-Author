@@ -41,8 +41,6 @@ function verifyName($userGuess, $con)
     $result = $con->query($query);
     $row = $result->fetch_array(MYSQLI_NUM);
     $authorName =  $row[0];
-    $authorQuote = $row[1];
-    $authorID = $row[2];
     $result->free_result();
 
     return $authorName;

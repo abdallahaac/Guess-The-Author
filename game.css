@@ -80,6 +80,7 @@ input {
 
 .iscorrect.result.final {
   margin-right: 130px;
+  color: orange;
 }
 
 .iscorrect.points {
