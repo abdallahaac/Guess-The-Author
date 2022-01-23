@@ -3,17 +3,31 @@ include 'includes.php';
 
 
 
-if (isset($_POST['submit-button'])) {
 
-    $userGuess = strip_tags($_POST['userGuess']);
-    $author = $_POST['author'];
+function scoreboard($authorName)
+{
+    if (isset($_POST['submit-button'])) {
+        $userGuess = strip_tags($_POST['userGuess']);
+        $author = $_POST['author'];
+        echo "<p class='iscorrect result final'>" ?><?php if ($userGuess == $author && 'submit-button') {
+                                                        session_start();
+                                                        $_SESSION['i'] = isset($_SESSION['i']) ? ++$_SESSION['i'] : 1;
+                                                        echo $_SESSION['i'];
+                                                    } else if (session_start() && $userGuess != $author) {
+                                                        echo "<p class='iscorrect result final'>0</p>";
+                                                        $display = 'true';
+                                                        session_destroy();
+                                                    } ?>
+<? "</p>";
+    }
 }
 
-if ($userGuess == $author) {
-    echo "<p class='iscorrect'>right</p>";
-} else {
-    echo "<p class='iscorrect'>wrong</p> ";
-}
+
+
+
+
+
+
 
 ?>
 <!DOCTYPE html>
@@ -28,42 +42,25 @@ if ($userGuess == $author) {
 </head>
 
 <body>
-
+    <p class='iscorrect result final'><?php scoreboard($authorName) ?></p>
     <div class="quote-container">
         <?php echo "<h4> $authorQuote </h4>" ?>
         <form action="#" method="POST">
-            <input name="userGuess" type="text" maxlength="50">
+            <input name="userGuess" type="text" maxlength="50" required>
             <input id="submit" type="submit" name="submit-button">
             <input type="hidden" name="author" value="<?php echo $authorName ?>">
+            <span class="iscorrect points">Points:</span>
+
         </form>
-        <!-- <p name="author"></p> -->
+        <!-- <p name=" author"></p> -->
     </div>
-
-
 </body>
-
+<script src="type.js">
+var name = <?= json_encode($display) ?>;
+alert('2');
+</script>
 <style>
-/* p {
-    position: absolute;
-    background: #063;
-    bottom: 0px;
-    right: 43%;
-    left: 50%;
-    margin-left: -150px;
-    margin-bottom: 50px
-} */
-.iscorrect {
-    font-family: monospace;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-right: 150px;
 
-}
-
-#submit {
-    color: orange;
-}
 </style>
 
 </html>

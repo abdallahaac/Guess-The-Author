@@ -68,3 +68,29 @@ input {
   text-align: center;
   color: white;
 }
+
+.iscorrect.result {
+  font-family: monospace;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 100px;
+  margin-bottom: 15px;
+}
+
+.iscorrect.result.final {
+  margin-right: 130px;
+}
+
+.iscorrect.points {
+  font-family: monospace;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 10px;
+  margin-right: 155px;
+}
+
+#submit {
+  color: orange;
+}
