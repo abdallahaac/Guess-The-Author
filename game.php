@@ -2,33 +2,6 @@
 include 'includes.php';
 
 
-
-
-function scoreboard($authorName)
-{
-    if (isset($_POST['submit-button'])) {
-        $userGuess = strip_tags($_POST['userGuess']);
-        $author = $_POST['author'];
-        echo "<p class='iscorrect result final'>" ?><?php if ($userGuess == $author && 'submit-button') {
-                                                        session_start();
-                                                        $_SESSION['i'] = isset($_SESSION['i']) ? ++$_SESSION['i'] : 1;
-                                                        echo $_SESSION['i'];
-                                                    } else if (session_start() && $userGuess != $author) {
-                                                        echo "<p class='iscorrect result final'>0</p>";
-                                                        $display = 'true';
-                                                        session_destroy();
-                                                    } ?>
-<? "</p>";
-    }
-}
-
-
-
-
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +15,7 @@ function scoreboard($authorName)
 </head>
 
 <body>
-    <p class='iscorrect result final'><?php scoreboard($authorName) ?></p>
+    <p class='iscorrect result final'><?php scoreboard($con) ?></p>
     <div class="quote-container">
         <?php echo "<h4> $authorQuote </h4>" ?>
         <form action="#" method="POST">
