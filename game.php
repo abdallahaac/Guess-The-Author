@@ -23,8 +23,8 @@ include 'includes.php';
             <input id="submit" type="submit" name="submit-button">
             <input type="hidden" name="author" value="<?php echo $authorName ?>">
             <span class="iscorrect points">Points:</span>
-
         </form>
+
         <!-- <p name=" author"></p> -->
     </div>
 </body>

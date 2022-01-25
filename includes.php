@@ -26,6 +26,7 @@ function scoreboard($con)
             echo $_SESSION['i'];
         } else if (session_start() && $userGuess != $author) {
             echo "<p class='iscorrect result final'>0</p>";
+            echo "<p class = 'errorMessage' id='errorMessage'>" . "Nice try but the author's name is: "  . "<span style='color:orange'>" . $author .  "</span>" . "</p>";
 
             session_destroy();
         } ?>
@@ -36,12 +37,10 @@ function scoreboard($con)
 
 function verifyName($userGuess, $con)
 {
-
     $query = "SELECT  DISTINCT authorName,quotes,id FROM authorQuotes WHERE LOWER(authorName) LIKE LOWER('%{$userGuess}%%') LIMIT 1";
     $result = $con->query($query);
     $row = $result->fetch_array(MYSQLI_NUM);
     $authorName =  $row[0];
     $result->free_result();
-
     return $authorName;
 }
