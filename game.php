@@ -20,9 +20,9 @@ include 'includes.php';
         <?php echo "<h4> $authorQuote </h4>" ?>
         <form action="#" method="POST" autocomplete="off">
             <input name="userGuess" type="text" maxlength="50" required>
-            <input id="submit" type="submit" name="submit-button">
+            <input id="submit" type="submit" name="submit-button ">
             <input type="hidden" name="author" value="<?php echo $authorName ?>">
-            <span class="iscorrect points">Points:</span>
+            <span class="iscorrect points">Pointss:</span>
         </form>
 
         <!-- <p name=" author"></p> -->

@@ -31,7 +31,7 @@ function scoreboard($con)
             // }
         } else if (session_start() && $userGuess != $author) {
             echo "<p class='iscorrect result final'>0</p>";
-            echo "<p class = 'errorMessage' id='errorMessage'>" . "Nice try but the author's name is: "  . "<span style='color:orange'>" . $author .  "</span>" . "</p>";
+            echo "<p class = 'errorMessage' id='errorMessage'>" . "Nice try but the author's name is: "  . "<span style='color: orange'>" . $author .  "</span>" . "</p>";
 
             session_destroy();
         } ?>
